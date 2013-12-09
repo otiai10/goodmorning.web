@@ -59,7 +59,11 @@ var executeSearch = function(keyword, cb, opt) {
 };
 
 $(function(){
-  executeSearch("アイカツ", replaceResults);
+  var keyword = "アイカツ";
+  if (location.hash.match('#')) {
+    keyword = location.hash.replace('#','');
+  }
+  executeSearch(keyword, replaceResults);
 
   $("#execute-search").on('click',function(ev){
     var keyword = $("#search").val();
