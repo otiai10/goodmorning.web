@@ -26,6 +26,7 @@ var notFound = function(){
   $('ol#results').append('<li>Not Found...</li>');
 };
 var disableSearchArea = function(keyword){
+  location.hash = '#' + keyword;
   $("#search").val(keyword).attr("disabled",true);
   $("#execute-search").attr("disabled",true);
   $("<img>").attr({
